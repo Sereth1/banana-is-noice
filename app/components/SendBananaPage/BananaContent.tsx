@@ -50,7 +50,7 @@ export default function BananaContent() {
     if (["mean", "angry", "lovable"].includes(bananaType)) {
       selectedMessage = {
         ...selectedMessage,
-        text: selectedMessage.text.replace("{name}", name),
+        text: selectedMessage.text.replace("{name}", fromName),
       };
     }
     setRandomMessage(selectedMessage);
@@ -74,10 +74,10 @@ export default function BananaContent() {
             className="bg-goldenBanana z-0 p-40 rounded shadow-lg space-y-10 shadow-lightBeige text-center lg:w-2/3 overflow-hidden"
           >
             <p className="text-xl mb-4">
-              <strong>To:</strong> {name}
+              <strong>From:</strong> {name}
             </p>
             <p className="text-xl mb-4">
-              <strong>From:</strong> {fromName}
+              <strong>To:</strong> {fromName}
             </p>
 
             <p className="text-lg mt-6 pt-10">{randomMessage.text}</p>
