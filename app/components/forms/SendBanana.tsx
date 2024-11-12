@@ -23,7 +23,7 @@ export default function SendBanana() {
     e.preventDefault();
     setShowBananas(true);
 
-    const url = `${window.location.origin}/share?name=${encodeURIComponent(
+    const url = `${window.location.origin}/SendBanana?name=${encodeURIComponent(
       name
     )}&fromName=${encodeURIComponent(fromName)}&bananaType=${encodeURIComponent(
       bananaType

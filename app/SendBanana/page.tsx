@@ -1,13 +1,12 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { use, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   angryBananaText,
   goodBananaText,
   lovableBananaText,
   meanBananaText,
 } from "../data/bananaTexts";
-import Image from "next/image";
 import SharedBananaAnimation from "../components/animation/SharedBananaAnimation";
 import gsap from "gsap";
 
@@ -21,12 +20,14 @@ export default function Page() {
   const ant = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(
-      ant.current,
-      { scale: 0 },
-      { scale: 1, duration: 1, ease: "power1" }
-    );
-  });
+    if (ant.current) {
+      gsap.fromTo(
+        ant.current,
+        { scale: 0 },
+        { scale: 1, duration: 1, ease: "power1" }
+      );
+    }
+  }, []);
 
   const bananaTexts = (() => {
     switch (bananaType) {
@@ -55,8 +56,8 @@ export default function Page() {
         text: selectedMessage.text.replace("{name}", name),
       };
     }
-    setIsLoading(true);
     setRandomMessage(selectedMessage);
+    setIsLoading(true);
   }, [bananaTexts, bananaType, name]);
 
   if (!isLoading) {
@@ -66,8 +67,8 @@ export default function Page() {
   return (
     <div className="overflow-hidden min-h-screen relative">
       <SharedBananaAnimation bananaImg={bananaImg} />
-      <div className="bg-hightLight overflow-hidden ">
-        <div className="p-10 bg-lightYellow min-h-screen flex flex-col  items-center justify-center">
+      <div className="bg-hightLight overflow-hidden">
+        <div className="p-10 bg-lightYellow min-h-screen flex flex-col items-center justify-center">
           <h2 className="text-7xl font-bold mb-20 text-lightBeige">
             You&apos;ve been Banananaad!
           </h2>
@@ -81,10 +82,9 @@ export default function Page() {
             <p className="text-xl mb-4">
               <strong>From:</strong> {fromName}
             </p>
-            <p className="text-xl mb-4 ">
+            <p className="text-xl mb-4">
               <strong>Banana Type:</strong> {bananaType}
             </p>
-
             <p className="text-lg mt-6 pt-10">{randomMessage.text}</p>
           </div>
         </div>
