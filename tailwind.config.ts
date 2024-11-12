@@ -1,4 +1,5 @@
-import type { Config } from "tailwindcss";
+import { Config } from "tailwindcss";
+import { PluginAPI } from "tailwindcss/types/config"; // Import the PluginAPI type
 
 const config: Config = {
   content: [
@@ -8,6 +9,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        goldenBanana: "#FFD700",
+        warmAmber: "#FFB300",
+        lightBeige: "#FFF8E1",
+        hightLight: "#D32F2F",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -15,6 +22,18 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function (api: PluginAPI) {
+      const { addUtilities } = api;
+      addUtilities({
+        ".centerEl": {
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        },
+      });
+    },
+  ],
 };
+
 export default config;

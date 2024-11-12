@@ -2,32 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Define custom color variables */
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: #FFF8E1;
+  --background-end-rgb: #FFF8E1;
 }
 
+/* Dark mode adjustments */
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
+    --foreground-rgb: #FFF8E1;
+    --background-start-rgb: #FFF8E1;
     --background-end-rgb: 0, 0, 0;
   }
 }
 
+/* Apply colors to the body */
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
-    )
+    ),
     rgb(var(--background-start-rgb));
 }
 
+/* Custom utility class for balanced text wrapping */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Define both fonts using @font-face */
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/Manrope-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pacifico";
+  src: url("/fonts/Pacifico-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+h2 {
+  font-family: "Pacifico", sans-serif;
+}
+
+.banana-phone {
+  width: 100px;
+  height: 300px;
+  border-radius: 50% 50% 50% 50% / 100% 100% 50% 50%;
+  transform: rotate(-15deg);
+  position: relative;
+  overflow: hidden;
+}
+
+.overflowNone{
+  overflow: hidden;
 }
