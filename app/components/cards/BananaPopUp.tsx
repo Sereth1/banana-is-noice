@@ -37,13 +37,13 @@ export default function BananaPopUp({
               <button
                 onClick={() => navigator.clipboard.writeText(generatedLink)}
                 className="mt-2 p-2
-                w-[100px] bg-lightBeige text-black  rounded"
+                w-[100px] bg-lightBeige text-black hover:bg-goldenBanana shadow-sm shadow-black transition-all duration-300 rounded"
               >
                 Copy Link
               </button>
               <button
                 onClick={() => setIsActive(false)}
-                className="mt-2 p-2 w-[100px] bg-lightBeige text-black   rounded"
+                className="mt-2 p-2 w-[100px] bg-lightBeige hover:bg-goldenBanana transition-all shadow-sm shadow-black duration-300 text-black   rounded"
               >
                 Close
               </button>
