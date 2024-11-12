@@ -1,6 +1,6 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import {
   angryBananaText,
   goodBananaText,
@@ -10,7 +10,7 @@ import {
 import SharedBananaAnimation from "../components/animation/SharedBananaAnimation";
 import gsap from "gsap";
 
-export default function Page() {
+function BananaContent() {
   const searchParams = useSearchParams();
   const name = searchParams.get("name") || "Someone Special";
   const fromName = searchParams.get("fromName") || "Anonymous";
@@ -90,5 +90,13 @@ export default function Page() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BananaContent />
+    </Suspense>
   );
 }
