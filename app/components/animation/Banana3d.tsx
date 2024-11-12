@@ -52,6 +52,7 @@ export default function Banana3d() {
 
   const enableAudio = () => {
     setIsAudioAllowed(true);
+    setIsHovered(true);
   };
 
   return (
