@@ -9,6 +9,20 @@ export default function Banana3d() {
   const [isHovered, setIsHovered] = useState(false);
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [isAudioAllowed, setIsAudioAllowed] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined" && isAudioAllowed) {
@@ -45,9 +59,10 @@ export default function Banana3d() {
       {!isAudioAllowed && (
         <button
           onClick={enableAudio}
-          className="mb-4 px-4 py-2 border bg-black bg-op text-white rounded"
+          className="mb-4 px-4 py-2 border bg-hightLight gap-2 bg-op flex  items-center text-white rounded"
         >
           <SiApplemusic />
+          <p>Click Me</p>
         </button>
       )}
       <div
@@ -76,7 +91,7 @@ export default function Banana3d() {
 
             <BananaModel isHovered={isHovered} />
 
-            <OrbitControls enableZoom={false} autoRotate />
+            {!isMobile && <OrbitControls enableZoom={false} autoRotate />}
           </Suspense>
         </Canvas>
       </div>
