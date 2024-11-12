@@ -107,7 +107,7 @@ export default function SendBanana() {
             >
               <div>
                 <label htmlFor="name" className="block text-sm lg:text-lg">
-                  Name:
+                  To Name:
                 </label>
                 <input
                   type="text"
@@ -115,7 +115,7 @@ export default function SendBanana() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full p-2 text-black bg-lightBeige rounded"
-                  placeholder="Enter your name"
+                  placeholder="To name"
                   required
                 />
               </div>
@@ -130,7 +130,7 @@ export default function SendBanana() {
                   value={fromName}
                   onChange={(e) => setFromName(e.target.value)}
                   className="w-full p-2 text-black bg-lightBeige rounded"
-                  placeholder="Enter sender's name"
+                  placeholder="From name"
                   required
                 />
               </div>
