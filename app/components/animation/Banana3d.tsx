@@ -1,8 +1,9 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { useState, useEffect } from "react";
-import BananaModel from "../model/BananaModel";
+import { Suspense, useEffect, useState } from "react";
 import { SiApplemusic } from "react-icons/si";
+import CanvasLoader from "../common/Loader";
+import BananaModel from "../model/BananaModel";
 
 export default function Banana3d() {
   const [isHovered, setIsHovered] = useState(false);
@@ -59,20 +60,24 @@ export default function Banana3d() {
           shadows
           camera={{ position: [0, 20, 100], fov: 50 }}
         >
-          <ambientLight intensity={0.5} />
-          <directionalLight
-            position={[2, 8, 2]}
-            intensity={1.5}
-            castShadow
-            shadow-mapSize-width={1024}
-            shadow-mapSize-height={1024}
-          />
-          <mesh receiveShadow position={[0, -8, 0]}>
-            <cylinderGeometry args={[50, 50, 5, 200]} />
-            <meshStandardMaterial color="#D32F2F" />
-          </mesh>
-          <BananaModel isHovered={isHovered} />
-          <OrbitControls enableZoom={false} autoRotate />
+          <Suspense fallback={<CanvasLoader />}>
+            <ambientLight intensity={0.5} />
+            <directionalLight
+              position={[2, 8, 2]}
+              intensity={1.5}
+              castShadow
+              shadow-mapSize-width={1024}
+              shadow-mapSize-height={1024}
+            />
+            <mesh receiveShadow position={[0, -8, 0]}>
+              <cylinderGeometry args={[50, 50, 5, 200]} />
+              <meshStandardMaterial color="#D32F2F" />
+            </mesh>
+
+            <BananaModel isHovered={isHovered} />
+
+            <OrbitControls enableZoom={false} autoRotate />
+          </Suspense>
         </Canvas>
       </div>
     </div>

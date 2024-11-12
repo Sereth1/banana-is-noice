@@ -14,7 +14,6 @@ const BananaModel = ({ isHovered }: Props) => {
   useEffect(() => {
     if (actions && animations.length > 0) {
       const action = actions[animations[0].name];
-
       if (action) {
         if (isHovered) {
           action.paused = false;
@@ -26,12 +25,14 @@ const BananaModel = ({ isHovered }: Props) => {
     }
   }, [actions, animations, isHovered]);
 
-  scene.traverse((object) => {
-    if ((object as Mesh).isMesh) {
-      object.castShadow = true;
-      object.receiveShadow = true;
-    }
-  });
+  useEffect(() => {
+    scene.traverse((object) => {
+      if ((object as Mesh).isMesh) {
+        object.castShadow = true;
+        object.receiveShadow = true;
+      }
+    });
+  }, [scene]);
 
   return (
     <mesh ref={meshRef}>
