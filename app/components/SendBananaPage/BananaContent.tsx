@@ -71,7 +71,7 @@ export default function BananaContent() {
           </h2>
           <div
             ref={animation}
-            className="bg-goldenBanana z-0 p-40 rounded shadow-lg space-y-10 shadow-lightBeige text-center lg:w-2/3 overflow-hidden"
+            className="bg-goldenBanana z-0 p-10 pt-10 lg:p-40 rounded shadow-lg space-y-10 shadow-lightBeige text-center lg:w-2/3 overflow-hidden"
           >
             <p className="text-xl mb-4">
               <strong>To:</strong> {name}

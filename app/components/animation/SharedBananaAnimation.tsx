@@ -24,7 +24,7 @@ export default function SharedBananaAnimation({ bananaImg }: Props) {
       {isActive && (
         <>
           {" "}
-          <div className="absolute inset-0 justify-center flex top-1/2 z-50">
+          <div className="absolute mt-36 lg:mt-0 inset-0 justify-center flex top-1/2 z-50">
             <button
               onClick={() => setIsActive(!isActive)}
               className="p-5 hover:bg-lightBeige hover:text-black transition-transform duration-300 pl-10 pr-10 shadow-xl shadow-black text-lightBeige bg-hightLight h-fit w-fit rounded"
@@ -34,7 +34,7 @@ export default function SharedBananaAnimation({ bananaImg }: Props) {
           </div>
           <div
             ref={animation}
-            className="absolute inset-0 z-30 justify-center items-center flex"
+            className="absolute inset-0 mt-60  lg:mt-0  z-30 justify-center items-center flex"
           >
             <Image
               width={1600}
