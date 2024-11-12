@@ -74,10 +74,10 @@ export default function BananaContent() {
             className="bg-goldenBanana z-0 p-40 rounded shadow-lg space-y-10 shadow-lightBeige text-center lg:w-2/3 overflow-hidden"
           >
             <p className="text-xl mb-4">
-              <strong>From:</strong> {name}
+              <strong>To:</strong> {name}
             </p>
             <p className="text-xl mb-4">
-              <strong>To:</strong> {fromName}
+              <strong>From:</strong> {fromName}
             </p>
 
             <p className="text-lg mt-6 pt-10">{randomMessage.text}</p>
