@@ -4,7 +4,7 @@ import { whyCardsData } from "@/app/data/whyCardsData";
 
 export default function WhyCards() {
   return (
-    <div className="p-5">
+    <div id="about" className="p-5">
       <div className="shadow-lg shadow-hightLight mt-5">
         <h2 className="text-center text-7xl mb-20 text-hightLight">
           All About Bananaaa

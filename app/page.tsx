@@ -9,8 +9,6 @@ import DropDownMenu from "./components/common/DropDownMenu";
 import BananaFooter from "./components/headerFooter/Footer";
 
 export default function Home() {
-  const [loading, setIsLoading] = useState(false);
-
   return (
     <main>
       <Header />

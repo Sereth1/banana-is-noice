@@ -21,7 +21,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* Apply the globalFont class to the body */}
       <body className={globalFont.className}>{children}</body>
     </html>
   );

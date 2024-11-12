@@ -78,7 +78,7 @@ const DropDownMenu: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="">
+    <div id="justWhy" className="">
       <div className="bg-goldenBanana lg:max-h-[672px] lg:h-[640px]   pb-20 ">
         <h2 className="text-center text-7xl text-hightLight pt-10 pb-10">
           Why Banana

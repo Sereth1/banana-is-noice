@@ -2,13 +2,7 @@ import React, { useRef, useState, useEffect, FormEvent } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 import BananaPopUp from "../cards/BananaPopUp";
-
-const data: string[] = [
-  '- **To a Friend**: Because nothing says "I appreciate you" quite like a random banana delivery. Bonus points if they’re having a bad day and you can make them laugh!',
-  "- **To an Enemy**: Show them you mean business with the ultimate passive-aggressive gesture. A banana today, world domination tomorrow!",
-  "- **To a Lover**: Want to show your affection in the most a-peel-ing way possible? A banana is sweet, just like your love (and you can totally write a mushy message, too).",
-  "- **To a Stranger**: Why not make someone's day, or leave them hilariously confused? Imagine their surprise when they receive a banana out of the blue. It’s an act of random, fruity kindness!",
-];
+import { bananaData } from "@/app/data/bananaSendData";
 
 export default function SendBanana() {
   const [name, setName] = useState<string>("");
@@ -76,7 +70,7 @@ export default function SendBanana() {
   }, [showBananas]);
 
   return (
-    <div className="">
+    <div id="sendBanana" className="">
       <div className="bg-goldenBanana shadow-lg pb-20 pt-20 lg:flex lg:justify-evenly relative grid gap-6 p-4 text-center lg:text-left">
         <BananaPopUp
           setIsActive={setIsActive}
@@ -89,7 +83,7 @@ export default function SendBanana() {
             Lover, or Confuse a Stranger!
           </h1>
           <div className="space-y-2 lg:space-y-4">
-            {data.map((el, i) => (
+            {bananaData.map((el, i) => (
               <p className="text-sm lg:text-lg" key={i}>
                 {el}
               </p>

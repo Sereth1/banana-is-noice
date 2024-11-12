@@ -5,16 +5,7 @@ const CanvasLoader = () => {
   return (
     <Html>
       <span className="canvas-load text-xl flex justify-center flex-auto"></span>
-      <p
-        style={{
-          fontSize: 30,
-          color: "#000",
-          fontWeight: 800,
-          marginTop: 40,
-        }}
-      >
-        {progress.toFixed(2)}%
-      </p>
+      <h2 className="text-2xl bg-hightLight mt-10">{progress.toFixed(2)}%</h2>
     </Html>
   );
 };

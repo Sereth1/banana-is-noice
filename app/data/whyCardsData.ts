@@ -1,8 +1,8 @@
 export const whyCardsData = [
   {
     backTitle: "Ancient Times",
-    bgImg: "/whyCard/bgImg/bgBanana.jpg",
-    logoImg: "/whyCard/icons/ancientBanana.png",
+    bgImg: "/whyCard/bgImg/1.jpg",
+    logoImg: "/whyCard/icons/1.png",
     title: "Bananas in Ancient Times",
     description:
       "Bananas have been around since 5000 B.C., longer than the invention of the wheel!",
@@ -10,8 +10,8 @@ export const whyCardsData = [
   },
   {
     backTitle: "Royalty",
-    bgImg: "/whyCard/bgImg/bgBanana.jpg",
-    logoImg: "/whyCard/icons/royalBanana.png",
+    bgImg: "/whyCard/bgImg/2.jpg",
+    logoImg: "/whyCard/icons/2.png",
     title: "Bananas and Royalty",
     description:
       "Ancient Indian royalty loved bananas—fit for kings and enjoyed as a special treat.",
@@ -19,8 +19,8 @@ export const whyCardsData = [
   },
   {
     backTitle: "Trade Boom",
-    bgImg: "/whyCard/bgImg/bgBanana.jpg",
-    logoImg: "/whyCard/icons/tradeBanana.png",
+    bgImg: "/whyCard/bgImg/3.jpg",
+    logoImg: "/whyCard/icons/3.png",
     title: "The Banana Trade Boom",
     description:
       "In the 1800s, bananas became globally famous, sparking a booming international trade.",
@@ -28,8 +28,8 @@ export const whyCardsData = [
   },
   {
     backTitle: "Myths",
-    bgImg: "/whyCard/bgImg/bgBanana.jpg",
-    logoImg: "/whyCard/icons/magicBanana.png",
+    bgImg: "/whyCard/bgImg/4.jpg",
+    logoImg: "/whyCard/icons/4.png",
     title: "Bananas and Myths",
     description:
       "Ancient cultures believed bananas brought luck, prosperity, and magical protection.",
