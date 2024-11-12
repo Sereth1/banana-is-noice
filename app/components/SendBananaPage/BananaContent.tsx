@@ -55,7 +55,7 @@ export default function BananaContent() {
     }
     setRandomMessage(selectedMessage);
     setIsLoading(true);
-  }, [bananaTexts, bananaType, name]);
+  }, [bananaTexts, bananaType, fromName]);
 
   if (!isLoading) {
     return <div></div>;
