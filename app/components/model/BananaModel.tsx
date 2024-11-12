@@ -35,7 +35,6 @@ const BananaModel = ({ isHovered }: Props) => {
 
   return (
     <mesh ref={meshRef}>
-      {/* Greatly increase the scale and adjust position */}
       <primitive object={scene} scale={[20, 20, 20]} position={[0, -5, 0]} />
     </mesh>
   );
